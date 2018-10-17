@@ -1,0 +1,38 @@
+#??????
+spring:
+  profiles:
+      active: dev
+#????
+  #profiles: dev
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/testmysql?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+#
+#?????profiles????
+mybatis:
+  typeAliasesPackage: com.test.entity
+  mapperLocations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+#redis
+redis:
+  database:  0
+  host:  127.0.0.1
+  port:  6379
+  password:
+  pool:
+     max-active: 8
+     max-wait: -1
+     max-idle: 8
+     min-idle: 0
+  timeout: 100
+#log4j
+logging:
+  config: classpath:log4j.properties
+server:
+  tomcat:
+    uri-encoding: UTF-8
+
+
